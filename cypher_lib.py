@@ -1,8 +1,3 @@
-import string
-
-low_chars = string.ascii_lowercase
-alphabet = list(low_chars)
-ascii_lower = [ord(x) for x in alphabet]
 
 def atbash():
     print("-" * 20)
@@ -22,8 +17,32 @@ def atbash():
         print(chr(shiftedDenary).lower(), end = " ")
     print()
     print("-" * 20)
-    
-atbash()
 
-def Rot13():
-    pass
+def rot13():
+    print("-" * 20)
+    userInput = str(input("Enter your text or word: "))
+    for char in userInput:
+        if char == " ":
+            print(" ", end = "")
+        if char.isupper():
+           print(chr((ord(char) - ord('A') + 13) % 26 + ord('A')), end = "")
+        if char.islower():
+            print(chr((ord(char) - ord('a') + 13) % 26 + ord('a')), end = "")
+        else:
+            print(char, end = "")
+    print()
+    print("-" * 20)
+
+def ceaser():
+    print("-" * 20)
+    userInput = str(input("Enter your text or word: "))
+    shift = int(input("Enter a what size of shift: ")) % 26
+    for char in userInput:
+        if char.isupper():
+           print(chr((ord(char) - ord('A') + shift) % 26 + ord('A')), end = "")
+        elif char.islower():
+            print(chr((ord(char) - ord('a') + shift) % 26 + ord('a')), end = "")
+        else:
+            print(char, end = "")
+    print()
+    print("-" * 20)

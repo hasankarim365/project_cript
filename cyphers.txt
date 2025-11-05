@@ -1,6 +1,32 @@
+Sourced from http://practicalcryptography.com/ciphers/   in  5/11/2025
+
+
 --------------- Atbash ---------------
 
 Atbash is a very simplistic cipher where you change A to Z, B to Y, and so on
 The Atbash cipher is a very common and simple cipher that simply encodes a message with the reverse of the alphabet.
 Initially it was used with Hebrew. Basically, when encoded, an "A" becomes a "Z", "B" turns into "Y", etc.
 
+--------------- ROT13 ---------------
+
+The ROT13 cipher is a substitution cipher with a specific key where the letters of the alphabet are offset 13 places.
+I.e. all 'A's are replaced with 'N's, all 'B's are replaced with 'O's, and so on. It can also be thought of as a Caesar cipher with a shift of 13.
+The ROT13 cipher offers almost no security, and can be broken very easily.
+Even if an adversary doesn't know a piece of ciphertext has been enciphered with the ROT13 cipher, they can still break it by assuming it is a substitution cipher and determining the key using hill-climbing.
+The ROT13 cipher is also an Caesar cipher with a key of 13, so breaking it as a Caesar cipher also works.
+
+--------------- Ceaser ---------------
+
+The Caesar cipher is one of the earliest known and simplest ciphers.
+It is a type of substitution cipher in which each letter in the plaintext is 'shifted' a certain number of places down the alphabet.
+For example, with a shift of 1, A would be replaced by B, B would become C, and so on.
+The method is named after Julius Caesar, who apparently used it to communicate with his generals.
+More complex encryption schemes such as the Vigenère cipher employ the Caesar cipher as one element of the encryption process.
+The widely known ROT13 'encryption' is simply a Caesar cipher with an offset of 13.
+The Caesar cipher offers essentially no communication security, and it will be shown that it can be easily broken even by hand.
+Cryptanalysis is the art of breaking codes and ciphers.
+The Caesar cipher is probably the easiest of all ciphers to break.
+Since the shift has to be a number between 1 and 25, (0 or 26 would result in an unchanged plaintext) we can simply try each possibility and see which one results in a piece of readable text.
+If you happen to know what a piece of the ciphertext is, or you can guess a piece, then this will allow you to immediately find the key.
+If this is not possible, a more systematic approach is to calculate the frequency distribution of the letters in the cipher text.
+This consists of counting how many times each letter appears. Natural English text has a very distinct distribution that can be used help crack codes.
