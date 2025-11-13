@@ -91,4 +91,29 @@ def rail_fence():
     print(''.join(rail_texts))
     return ''.join(rail_texts)
 
+def baconian():
+    print("-" * 20)
+    substitution = {
+        "A": "aaaaa", "B": "aaaab", "C": "aaaba", "D": "aaabb", 
+        "E": "aabaa", "F": "aabab", "G": "aabba", "H": "aabbb",
+        "I": "abaaa", "J": "abaaa", "K": "abaab", "L": "ababa",
+        "M": "abbaa", "N": "abbaa", "O": "abbab", "P": "abbba",
+        "Q": "abbbb", "R": "baaaa", "S": "baaab", "T": "baaba",
+        "U": "baabb", "V": "baabb", "W": "babaa","X": "babab",
+        "Y": "babba", "Z": "babbb"
+        }
+    userInput = str(input("ENTER WORD THAT YOU WANT TO CYPHER (WITH NO SPACES OR NUMBERS) : ")).upper()
+    output = []
+    if not userInput.isalpha():
+        print("You had an incorrect character in your input!")
+        return False
+    for char in userInput:
+        for key, value in substitution.items():
+            if key == char:
+                output.append(value + " ")
+    output = "".join(output)
+    print(output)
+    print("-" * 20)
+    return output
+    
 
